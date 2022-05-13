@@ -1,6 +1,5 @@
 import { MailAdapter, SendMailData } from "../mail-adapter";
 import nodemailer from 'nodemailer'
-import { brotliDecompressSync } from "zlib";
 
 const transport = nodemailer.createTransport({
     host: "smtp.mailtrap.io",
@@ -9,7 +8,7 @@ const transport = nodemailer.createTransport({
         user: "7c0bf8c9a8b4d2",
         pass: "874e36cd5c1bd6"
     }
-});
+})
 
 export class NodemailerMailAdapter implements MailAdapter {
     async sendMail({ subject, body}: SendMailData) {
