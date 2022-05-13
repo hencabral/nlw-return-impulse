@@ -1,10 +1,10 @@
-import { prisma } from './prisma'
+import cors from 'cors'
 import express from 'express'
-import nodemailer from 'nodemailer'
 import { routes } from './routes'
 
 const app = express()
 
+app.use(cors())
 app.use(express.json())
 app.use(routes)
 
